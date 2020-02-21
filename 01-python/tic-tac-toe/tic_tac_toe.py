@@ -8,6 +8,7 @@ _PLAYER_SYMBOL = "x"
 _MACHINE_SYMBOL = "o"
 
 class TicTacToeGame():
+
   def __init__(self):
     self.board = [None] * 9
     self.turn = _PLAYER
@@ -53,7 +54,7 @@ class TicTacToeGame():
       self.turn = _PLAYER
 
   def player_choose_cell(self):
-    print("Input empty cell bewtween 0 and 8")
+    print("Input empty cell bewtween 1 and 9")
     player_cell = input().strip()
     match = re.search("\d", player_cell)
 
@@ -61,10 +62,14 @@ class TicTacToeGame():
       print("Input is not a number, please try again")
       return self.player_choose_cell()
 
-    player_cell = int(player_cell)
+    player_cell = int(player_cell) - 1
 
     if self.board[player_cell] is not None:
       print("Cell is already taken, try again")
+      return self.player_choose_cell()
+
+    if player_cell == 0:
+      print('The number must be between 1 and 9')
       return self.player_choose_cell()
 
     return player_cell
@@ -97,4 +102,4 @@ class TicTacToeGame():
     elif self.winner == _PLAYER:
       print(_MACHINE)
     else:
-      print('empate')
+      print('draw')
