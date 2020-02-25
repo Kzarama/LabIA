@@ -20,30 +20,37 @@ class TicTacToeGame():
     if self.board[0] == self.board[1] == self.board[2] and self.board[0] != None and self.board[1] != None and self.board[2] != None:
       self.is_game_over = True
       self.winner = self.turn
+      return self.is_game_over
     if self.board[3] == self.board[4] == self.board[5] and self.board[3] != None and self.board[4] != None and self.board[5] != None:
       self.is_game_over = True
       self.winner = self.turn
+      return self.is_game_over
     if self.board[6] == self.board[7] == self.board[8] and self.board[6] != None and self.board[7] != None and self.board[8] != None:
       self.is_game_over = True
       self.winner = self.turn
+      return self.is_game_over
     #cols
     if self.board[0] == self.board[3] == self.board[6] and self.board[0] != None and self.board[3] != None and self.board[6] != None:
       self.is_game_over = True
       self.winner = self.turn
+      return self.is_game_over
     if self.board[1] == self.board[4] == self.board[7] and self.board[1] != None and self.board[4] != None and self.board[7] != None:
       self.is_game_over = True
       self.winner = self.turn
+      return self.is_game_over
     if self.board[2] == self.board[5] == self.board[8] and self.board[2] != None and self.board[5] != None and self.board[8] != None:
       self.is_game_over = True
       self.winner = self.turn
+      return self.is_game_over
     #diagonals
     if self.board[0] == self.board[4] == self.board[8] and self.board[0] != None and self.board[4] != None and self.board[8] != None:
       self.is_game_over = True
       self.winner = self.turn
+      return self.is_game_over
     if self.board[2] == self.board[4] == self.board[6] and self.board[2] != None and self.board[4] != None and self.board[6] != None:
       self.is_game_over = True
       self.winner = self.turn
-    return self.is_game_over
+      return self.is_game_over
 
   def play(self):
     if self.turn == _PLAYER:
